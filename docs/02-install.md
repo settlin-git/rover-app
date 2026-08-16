@@ -31,8 +31,11 @@ Install via [nvm](https://github.com/nvm-sh/nvm), which lets you switch Node
 versions later without reinstalling — worth the extra minute.
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh | bash
 ```
+
+If that version number has aged by the time you read this, take the current one
+from [the nvm repository](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 Close the terminal, open a new one, then:
 
