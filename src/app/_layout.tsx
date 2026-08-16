@@ -16,7 +16,18 @@ export default function RootLayout() {
         <ThemeProvider value={isDark ? DarkTheme : DefaultTheme}>
           <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen
+              name="route"
+              options={{
+                headerShown: false,
+                // Building a route takes over the screen rather than sitting in
+                // a card, so it needs the full-screen presentation.
+                presentation: 'fullScreenModal',
+                animation: 'slide_from_bottom',
+              }}
+            />
             <Stack.Screen name="trip/[id]" options={{ title: 'Trip' }} />
+            <Stack.Screen name="gallery" options={{ title: 'Component gallery' }} />
           </Stack>
           <StatusBar style="auto" />
         </ThemeProvider>

@@ -1,51 +1,66 @@
+import { durationInDays } from '@/lib/dates';
+
 /**
- * Placeholder data so the app has something to render before a backend exists.
+ * Trips, held in memory.
  *
  * Keeping fake data behind the same function shape you will eventually use for
  * real requests means swapping in a database later only changes this file —
  * every screen that calls `getTrips()` keeps working untouched.
- * See docs/08-add-a-backend.md.
+ * See docs/09-backend.md.
  */
-
-export type TripStatus = 'planned' | 'active' | 'complete';
 
 export type Trip = {
   id: string;
-  title: string;
-  location: string;
+  name: string;
+  /** `YYYY-MM-DD`. */
   startsOn: string;
-  distanceKm: number;
-  status: TripStatus;
-  notes: string;
+  endsOn: string;
+  completed: boolean;
+  /**
+   * ISO 3166-1 numeric codes for every country the route passes through. This
+   * is what the card's map highlights, so it has to be codes rather than
+   * display names.
+   */
+  countries: string[];
+  provinceCount: number;
+  cityCount: number;
+  /** Place ids from the catalogue in `places.ts`, in travel order. */
+  placeIds: string[];
 };
 
 const TRIPS: Trip[] = [
   {
-    id: 'coast-road',
-    title: 'Coast Road',
-    location: 'Big Sur, California',
-    startsOn: '12 Sep',
-    distanceKm: 148,
-    status: 'active',
-    notes: 'Cliffside route with three planned stops. Fog clears after midday.',
+    id: 'china-2016',
+    name: 'China trip 2016',
+    startsOn: '2016-04-08',
+    endsOn: '2016-06-02',
+    completed: true,
+    countries: ['156'],
+    provinceCount: 6,
+    cityCount: 21,
+    placeIds: [],
   },
   {
-    id: 'alpine-loop',
-    title: 'Alpine Loop',
-    location: 'Dolomites, Italy',
-    startsOn: '04 Oct',
-    distanceKm: 92,
-    status: 'planned',
-    notes: 'Steep first climb, then a long descent into the valley.',
+    id: 'south-america-2015',
+    name: 'South America trip 2015',
+    startsOn: '2015-09-14',
+    endsOn: '2015-11-15',
+    completed: true,
+    countries: ['604', '068', '152', '032'],
+    provinceCount: 18,
+    cityCount: 32,
+    placeIds: [],
   },
   {
-    id: 'desert-run',
-    title: 'Desert Run',
-    location: 'Moab, Utah',
-    startsOn: '21 Jun',
-    distanceKm: 210,
-    status: 'complete',
-    notes: 'Start before sunrise. Water resupply is only available at the halfway point.',
+    id: 'north-india-2024',
+    name: 'North India loop',
+    startsOn: '2024-10-02',
+    endsOn: '2024-10-19',
+    completed: true,
+    countries: ['356'],
+    provinceCount: 4,
+    cityCount: 9,
+    placeIds: ['new-delhi', 'agra', 'rishikesh', 'dharamshala'],
   },
 ];
 
@@ -55,4 +70,31 @@ export function getTrips(): Trip[] {
 
 export function getTrip(id: string): Trip | undefined {
   return TRIPS.find((trip) => trip.id === id);
+}
+
+export function tripDuration(trip: Trip): number {
+  return durationInDays(trip.startsOn, trip.endsOn);
+}
+
+export type NewTrip = Omit<Trip, 'id' | 'provinceCount' | 'cityCount' | 'countries'> & {
+  countries: string[];
+};
+
+/**
+ * Saves a newly built route as a trip.
+ *
+ * Province counts are not derived here because working out which administrative
+ * region a coordinate falls in needs a real geocoder. Until there is one, the
+ * count stays at zero rather than being guessed at.
+ */
+export function createTrip(input: NewTrip): Trip {
+  const trip: Trip = {
+    ...input,
+    id: `trip-${Date.now()}`,
+    provinceCount: 0,
+    cityCount: input.placeIds.length,
+  };
+
+  TRIPS.unshift(trip);
+  return trip;
 }
