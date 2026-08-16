@@ -1,0 +1,19 @@
+---
+alwaysApply: true
+---
+
+# Rover — repo-wide rules
+
+React Native app on Expo SDK 57 (React Native 0.86), Expo Router, TypeScript and
+NativeWind v4. It runs on iOS and Android; web is only a preview convenience.
+
+- Verify APIs against https://docs.expo.dev/versions/v57.0.0/ before using them.
+  Expo changes fast and older patterns you remember are often wrong now.
+- Install packages with `npx expo install <pkg>`, never `npm install <pkg>`.
+  Only the Expo command picks the version matching this SDK.
+- Style with NativeWind `className`, not `StyleSheet.create`.
+- Never hard-code a colour, radius or font size. Use a token from
+  `src/theme/tokens.js`; add one there if it is missing.
+- Import from `@/` (for example `@/components/ui/button`), not `../../`.
+- After changing code, run `npm run typecheck` and `npm run lint` and fix what
+  they report.

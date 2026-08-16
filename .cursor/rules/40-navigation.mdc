@@ -1,0 +1,25 @@
+---
+globs: src/app/**
+alwaysApply: false
+---
+
+# Routing
+
+Expo Router maps files in `src/app/` to routes, so the folder structure *is* the
+navigation. Creating a file creates a screen.
+
+- `src/app/(tabs)/` — the tab bar. A new file here adds a tab, so register it in
+  `(tabs)/_layout.tsx` too. Parentheses group routes without appearing in the URL.
+- `src/app/thing/[id].tsx` — a screen that takes a parameter, read with
+  `useLocalSearchParams()`.
+- `_layout.tsx` — shared shell for everything in its folder.
+
+Conventions:
+
+- Navigate with `<Link href={...}>` for anything a user taps. Use
+  `router.push()` only for navigation triggered by code, such as after a form
+  submits.
+- Type route params: `useLocalSearchParams<{ id: string }>()`.
+- Every dynamic screen must handle the case where its record does not exist.
+- Keep route files thin. They compose components and fetch data; visual details
+  belong in components.

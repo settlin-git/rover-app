@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * GENERATED FILE — do not edit.
+ * Change src/theme/tokens.js instead, then run `npm run tokens`.
+ */
+
+:root {
+  --color-background: 244 244 247;
+  --color-surface: 255 255 255;
+  --color-surface-subtle: 239 239 242;
+  --color-field: 247 247 250;
+  --color-content: 16 17 20;
+  --color-content-secondary: 96 100 108;
+  --color-content-tertiary: 140 145 155;
+  --color-content-inverse: 255 255 255;
+  --color-action: 34 38 43;
+  --color-action-hover: 15 18 21;
+  --color-on-action: 255 255 255;
+  --color-accent: 18 192 211;
+  --color-accent-hover: 15 169 186;
+  --color-accent-subtle: 228 248 251;
+  --color-on-accent: 255 255 255;
+  --color-route: 106 76 228;
+  --color-route-muted: 154 160 166;
+  --color-map-water: 190 221 234;
+  --color-map-land: 255 255 255;
+  --color-map-visited: 217 222 142;
+  --color-map-outline: 207 230 240;
+  --color-success: 22 145 90;
+  --color-warning: 191 128 8;
+  --color-danger: 208 48 56;
+  --color-border: 228 229 234;
+  --color-border-strong: 198 200 210;
+  --color-overlay: 0 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: 9 9 11;
+    --color-surface: 23 24 28;
+    --color-surface-subtle: 34 36 43;
+    --color-field: 28 29 34;
+    --color-content: 250 250 252;
+    --color-content-secondary: 176 180 186;
+    --color-content-tertiary: 130 134 142;
+    --color-content-inverse: 16 17 20;
+    --color-action: 244 244 247;
+    --color-action-hover: 255 255 255;
+    --color-on-action: 16 17 20;
+    --color-accent: 46 211 228;
+    --color-accent-hover: 92 221 235;
+    --color-accent-subtle: 14 46 51;
+    --color-on-accent: 4 38 43;
+    --color-route: 142 123 255;
+    --color-route-muted: 107 112 118;
+    --color-map-water: 22 50 61;
+    --color-map-land: 29 32 36;
+    --color-map-visited: 142 150 72;
+    --color-map-outline: 34 65 77;
+    --color-success: 61 184 122;
+    --color-warning: 226 168 44;
+    --color-danger: 240 100 106;
+    --color-border: 46 49 53;
+    --color-border-strong: 70 74 80;
+    --color-overlay: 0 0 0;
+  }
+}
