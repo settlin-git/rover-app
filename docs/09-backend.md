@@ -12,9 +12,10 @@ work through it slowly.
 Not necessarily. Two cheaper options are worth ruling out first.
 
 **If data only needs to survive app restarts on one phone** — a saved theme,
-onboarding progress, a local list — use device storage instead. `expo-sqlite`
-gives you a `localStorage` that works exactly like the web one. No accounts, no
-server, no cost.
+onboarding progress, a local list — use device storage instead. Install
+`expo-sqlite`, add `import 'expo-sqlite/localStorage/install';` once near the top
+of your app, and you get a `localStorage` that behaves like the web one. No
+accounts, no server, no cost.
 
 **If the data never changes** — help text, a fixed catalogue — leave it in the
 code. It ships with the app and always works offline.

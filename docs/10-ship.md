@@ -181,7 +181,7 @@ much easier than skipping three and doing them at once:
 
 ```bash
 npx expo install expo@latest --fix
-npx expo-doctor
+npm run doctor
 ```
 
 Then build, test properly, and ship. Never push an SDK upgrade straight to

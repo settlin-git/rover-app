@@ -105,7 +105,7 @@ and Android interface elements. Not a website in a wrapper; a real
 on your phone during development.
 
 **Expo Router** — decides which screen is which based on where files sit in
-`src/app/`. Create `src/app/settings.tsx` and you have a `/settings` screen. The
+`src/app/`. Create `src/app/about.tsx` and you have an `/about` screen. The
 folder structure is the navigation diagram.
 
 **NativeWind / Tailwind** — styling by writing short class names instead of

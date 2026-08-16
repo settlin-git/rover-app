@@ -134,11 +134,15 @@ touch, real performance. Install them later if you want to see both platforms
 side by side without owning both.
 
 **iOS Simulator (Mac only).** Install Xcode from the Mac App Store. It is very
-large, around 10GB, and takes a long time. Then open it once and let it finish
-installing components, and run:
+large, around 10GB, and takes a long time. Then open Xcode once and let it
+finish installing its additional components — that step is what actually gives
+you the Simulator, so do not skip it. Afterwards, `npm run ios` will launch it.
+
+If Expo later complains that it cannot find Xcode, point the command line tools
+at it:
 
 ```bash
-xcode-select --install
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
 **Android Emulator (Mac or Windows).** Install
