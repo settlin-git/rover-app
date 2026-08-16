@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * GENERATED FILE — do not edit.
+ * Change src/theme/tokens.js instead, then run `npm run tokens`.
+ */
+
+:root {
+  --color-background: 255 255 255;
+  --color-surface: 250 250 252;
+  --color-surface-raised: 255 255 255;
+  --color-surface-sunken: 241 241 245;
+  --color-content: 16 17 20;
+  --color-content-secondary: 96 100 108;
+  --color-content-tertiary: 140 145 155;
+  --color-content-inverse: 255 255 255;
+  --color-brand: 79 70 229;
+  --color-brand-hover: 67 56 202;
+  --color-brand-subtle: 238 238 255;
+  --color-on-brand: 255 255 255;
+  --color-success: 22 145 90;
+  --color-warning: 191 128 8;
+  --color-danger: 208 48 56;
+  --color-border: 226 227 233;
+  --color-border-strong: 198 200 210;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: 9 9 11;
+    --color-surface: 22 23 26;
+    --color-surface-raised: 33 34 38;
+    --color-surface-sunken: 0 0 0;
+    --color-content: 250 250 252;
+    --color-content-secondary: 176 180 186;
+    --color-content-tertiary: 130 134 142;
+    --color-content-inverse: 16 17 20;
+    --color-brand: 129 122 255;
+    --color-brand-hover: 149 143 255;
+    --color-brand-subtle: 31 30 56;
+    --color-on-brand: 12 12 20;
+    --color-success: 61 184 122;
+    --color-warning: 226 168 44;
+    --color-danger: 240 100 106;
+    --color-border: 46 49 53;
+    --color-border-strong: 70 74 80;
+  }
+}
