@@ -12,7 +12,7 @@ export default function TabsLayout() {
         tabBarActiveTintColor: colors.brand,
         tabBarInactiveTintColor: colors['content-tertiary'],
         tabBarStyle: {
-          backgroundColor: colors['surface-raised'],
+          backgroundColor: colors.surface,
           borderTopColor: colors.border,
         },
         headerStyle: { backgroundColor: colors.background },

@@ -12,7 +12,7 @@ export function Card({ variant = 'raised', className, ...props }: CardProps) {
     <View
       className={cn(
         'gap-2 rounded-card p-4',
-        variant === 'raised' ? 'bg-surface-raised' : 'border border-border bg-transparent',
+        variant === 'raised' ? 'bg-surface' : 'border border-border bg-transparent',
         className
       )}
       {...props}

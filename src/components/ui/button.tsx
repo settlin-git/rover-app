@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn';
 
 const containers = {
   primary: 'bg-brand active:bg-brand-hover',
-  secondary: 'bg-surface-raised border border-border active:bg-surface-sunken',
+  secondary: 'bg-surface border border-border active:bg-surface-sunken',
   ghost: 'bg-transparent active:bg-surface-sunken',
   danger: 'bg-danger active:opacity-90',
 } as const;

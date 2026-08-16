@@ -18,11 +18,11 @@
 /** Light and dark must always declare exactly the same set of keys. */
 const colors = {
   light: {
-    // Surfaces, from furthest back to closest to the user.
-    background: '#FFFFFF',
-    surface: '#FAFAFC',
-    'surface-raised': '#FFFFFF',
-    'surface-sunken': '#F1F1F5',
+    // Surfaces, from furthest back to closest to the user. Each step must be
+    // visibly different from the one before it, or cards vanish into the page.
+    background: '#F7F7FA',
+    surface: '#FFFFFF',
+    'surface-sunken': '#EBEBF0',
 
     // Text and icons.
     content: '#101114',
@@ -48,8 +48,7 @@ const colors = {
 
   dark: {
     background: '#09090B',
-    surface: '#16171A',
-    'surface-raised': '#212226',
+    surface: '#17181C',
     'surface-sunken': '#000000',
 
     content: '#FAFAFC',
