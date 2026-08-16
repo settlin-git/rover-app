@@ -1,0 +1,28 @@
+---
+description: How colours, spacing, radii and font sizes work in this project, and how to add a new design token
+alwaysApply: false
+---
+
+# Design tokens
+
+`src/theme/tokens.js` is the only place colour, radius and type values are
+defined. `tailwind.config.js` reads it, and `scripts/build-tokens.mjs` generates
+the CSS variables in `src/global.css`.
+
+Adding a token:
+
+1. Add the key to **both** `colors.light` and `colors.dark` in `tokens.js`. The
+   generator fails if the two sets differ.
+2. Run `npm run tokens`.
+3. Use the resulting class: a `foo` colour token gives you `bg-foo`, `text-foo`
+   and `border-foo`.
+
+Rules:
+
+- Never edit `src/global.css` directly — it is generated and will be overwritten.
+- Name tokens by role (`danger`, `content-secondary`), never by appearance
+  (`red`, `grey-600`).
+- Never write a hex value, `rgb()` or a raw pixel font size in a component.
+- Prefer classes over raw values. `useThemeColors()` exists only for APIs that
+  cannot take a class name, such as navigation options and `<StatusBar>`.
+- Light and dark both come from these tokens, so verify a change in both.

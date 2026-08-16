@@ -1,0 +1,35 @@
+---
+description: How to turn a Figma frame, screen or component into code in this project
+alwaysApply: false
+---
+
+# Implementing a Figma design
+
+When given a Figma link, read the design through the Figma MCP server first.
+Never guess at a layout from a screenshot alone when the file is available.
+
+Then, before writing anything:
+
+1. List the elements in the frame and match each one to an existing component in
+   `src/components/ui/`. Reuse beats recreate.
+2. Match every colour, radius and font size to a token in `src/theme/tokens.js`.
+   If the design uses a value within a few percent of an existing token, use the
+   token — designs drift, and a near-match is almost always the same intent.
+   Only add a token when the value is genuinely new, and say that you did.
+3. Say which parts of the design you cannot build with what exists, and what you
+   propose adding, before you build them.
+
+While building:
+
+- Figma's own code output is a starting hint, not the answer. It emits absolute
+  positions and fixed pixel sizes; translate those into flexbox with `gap`, and
+  into tokens. Never paste it in unchanged.
+- A fixed frame width in Figma means "designed at this width", not "hard-code
+  this width". Let content fill the available space.
+- Export icons and images through the MCP asset endpoint. If it returns a local
+  source, use that source directly rather than adding an icon package or
+  inventing a placeholder.
+- Reproduce spacing as `gap` on the parent, not margins on children.
+
+Afterwards, state clearly where the implementation deviates from the design and
+why.

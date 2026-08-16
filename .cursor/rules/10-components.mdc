@@ -1,0 +1,20 @@
+---
+globs: src/components/**/*.tsx,src/app/**/*.tsx
+alwaysApply: false
+---
+
+# Component conventions
+
+- Check `src/components/ui/` first. Reuse `Screen`, `Text`, `Button`, `Card` and
+  `Badge` rather than rebuilding a plain `View` with utility classes.
+- Never use React Native's `<Text>` directly. Use `@/components/ui/text`, which
+  applies the type scale.
+- Wrap every screen in `<Screen>` so safe-area insets and padding stay uniform.
+- Merge classes with `cn()` from `@/lib/cn` and accept a `className` prop so
+  callers can override styling.
+- Express variants as an object keyed by variant name, the way `button.tsx`
+  does. Do not chain ternaries inside `className`.
+- `src/components/ui/` holds generic, reusable pieces. Anything that knows about
+  app data (a trip, a user) belongs in `src/components/`.
+- Add `accessibilityRole` and `accessibilityLabel` to anything tappable.
+- Handle three states for every list: loading, empty and populated.
